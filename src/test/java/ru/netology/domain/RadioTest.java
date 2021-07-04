@@ -37,7 +37,8 @@ public class RadioTest {
         Radio rad = new Radio();
         rad.setCurrentRadioStation(5);
         int expected = 6;
-        assertEquals(expected, rad.setNextRadioStationAndBackToMin());
+        assertEquals(expected, rad.setNextStation());
+        assertEquals(expected, rad.getCurrentRadioStation());
     }
 
     @Test
@@ -45,7 +46,7 @@ public class RadioTest {
         Radio radioRock = new Radio();
         radioRock.setCurrentRadioStation(2);
         int expected = 3;
-        assertEquals(expected, radioRock.setNextRadioStationAndBackToMin());
+        assertEquals(expected, radioRock.setNextStation());
     }
 
     @Test
@@ -53,7 +54,7 @@ public class RadioTest {
         Radio radioRock = new Radio();
         radioRock.setCurrentRadioStation(1);
         int expected = 0;
-        assertEquals(expected, radioRock.setEarlyRadioStationAndBackToMax());
+        assertEquals(expected, radioRock.setEarlyStation());
     }
 
     @Test
@@ -78,10 +79,10 @@ public class RadioTest {
 
     @Test
     public void ShouldSetNextRadioStationNegativeNumber9() {
-        Radio radioRock = new Radio();
-        radioRock.setCurrentRadioStation(9);
+        Radio rad = new Radio();
+        rad.setCurrentRadioStation(9);
         int expected = 0;
-        assertEquals(expected, radioRock.setNextRadioStationAndBackToMin());
+        assertEquals(expected, rad.setNextStation());
     }
 
     @Test
@@ -89,7 +90,7 @@ public class RadioTest {
         Radio rad = new Radio();
         rad.setCurrentRadioStation(9);
         int expected = 0;
-        assertEquals(expected, rad.setNextRadioStationAndBackToMin());
+        assertEquals(expected, rad.setNextStation());
     }
 
 
@@ -99,7 +100,7 @@ public class RadioTest {
         Radio rad = new Radio();
         rad.setCurrentRadioStation(1);
         int expected = 0;
-        assertEquals(expected, rad.setEarlyRadioStationAndBackToMax());
+        assertEquals(expected, rad.setEarlyStation());
     }
 
     @Test
@@ -107,7 +108,7 @@ public class RadioTest {
         Radio rad = new Radio();
         rad.setCurrentRadioStation(0);
         int expected = 9;
-        assertEquals(expected, rad.setEarlyRadioStationAndBackToMax());
+        assertEquals(expected, rad.setEarlyStation());
 
     }
 
@@ -116,7 +117,7 @@ public class RadioTest {
         Radio rad = new Radio();
         rad.setCurrentRadioStation(-1);
         int expected = 9;
-        assertEquals(expected, rad.setEarlyRadioStationAndBackToMax());
+        assertEquals(expected, rad.setEarlyStation());
 
     }
 
