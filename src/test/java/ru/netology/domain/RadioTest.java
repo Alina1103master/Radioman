@@ -5,22 +5,16 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class RadioTest {
-    @Test
-    public void Radio() {
-        Radio rad = new Radio(10,100);
-        assertEquals(10,rad.getCurrentRadioStation());
-        assertEquals(100, rad.getMaxVolume());
-    }
 
     Radio rad = new Radio();
+
     @Test
     public void mustBeInTheFeild() {
-        assertEquals(0,rad.getCurrentRadioStation());
-        assertEquals(0,rad.getCurrentVolume());
-        assertEquals(100,rad.getMaxVolume());
-        assertEquals(0,rad.getMinVolume());
+        assertEquals(0, rad.getCurrentRadioStation());
+        assertEquals(0, rad.getCurrentVolume());
+        assertEquals(100, rad.getMaxVolume());
+        assertEquals(0, rad.getMinVolume());
     }
-
 
 
     @Test
@@ -84,10 +78,6 @@ public class RadioTest {
     }
 
 
-
-
-
-
     @Test
     public void ShouldSetPreviousRadioStationNumber1() {
         Radio rad = new Radio();
@@ -135,7 +125,7 @@ public class RadioTest {
     public void ShouldSetMinVolume() {
         rad.setCurrentVolume(0);
         rad.setCurrentVolume(-1);
-        assertEquals(0,rad.getCurrentVolume());
+        assertEquals(0, rad.getCurrentVolume());
     }
 
     @Test
@@ -226,7 +216,6 @@ public class RadioTest {
         int expected = 1;
         assertEquals(expected, rad.setEarlyVolume());
     }
-
 
 
     @Test
